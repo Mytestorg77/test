@@ -1,3 +1,13 @@
+commands_restrictions:
+  backport:
+    conditions:
+      - or:
+        - sender-permission>=write
+        - sender=github-actions[bot]
+defaults:
+  actions:
+    backport:
+      title: "[{{ destination_branch }}] (backport #{{ number }}) {{ title }}"
 pull_request_rules:
   - name: automatic merge on approval
     conditions:
