@@ -1,0 +1,9 @@
+pull_request_rules:
+  - name: automatic merge on approval
+    conditions:
+      - "label=ready-to-merge"
+      - "status-success=CI"
+      - "#approved-reviews-by>=1"
+    actions:
+      merge:
+        method: squash
